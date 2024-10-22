@@ -7,6 +7,13 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <nav className="navbar">
+          <ul className="nav-links">
+            <li>
+              <Link to="/test">Test</Link>
+            </li>
+          </ul>
+        </nav>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
