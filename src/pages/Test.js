@@ -1,5 +1,11 @@
+import './Pages.css';
+
 function Test() {
-  return <h1>Hello World!</h1>;
+  return (
+    <div className="Pages">
+      <h1>Hello World!</h1>
+    </div>
+  );
 }
 
 export default Test;

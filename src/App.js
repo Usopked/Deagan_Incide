@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import Test from './pages/Test.js';
+import Login from './pages/Login.js';
 
 function App() {
   return (
@@ -12,26 +12,15 @@ function App() {
             <li>
               <Link to="/test">Test</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </nav>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and  save to reload.
-          </p>
-          <Link to='/test'>Test</Link>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
       </div>
       <Routes>
         <Route path="/test" element={<Test/>} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </Router>
 
