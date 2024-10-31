@@ -1,7 +1,7 @@
 // src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { isSupported } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyArH0JG44qIQcdEvKTUxbadI95VNiqwG4M",
@@ -13,16 +13,6 @@ const firebaseConfig = {
   measurementId: "G-DEGX802PQ0"
 };
 
-// Firebase 앱 초기화
 const app = initializeApp(firebaseConfig);
-
-// Firebase 인증 객체 내보내기
 export const auth = getAuth(app);
-
-// Analytics 사용 가능 시 초기화
-isSupported().then((supported) => {
-  if (supported) {
-    // const analytics = getAnalytics(app);
-    console.log("Analytics 초기화 완료");
-  }
-});
+export const db = getFirestore(app);
