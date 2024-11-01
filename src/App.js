@@ -1,36 +1,24 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './App.css';
-import Test from './pages/Test';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './pages/AuthContext';
 import Login from './pages/Login';
+import Community from './pages/Community';
+import PostDetail from './pages/PostDetail';
 import PostForm from './pages/PostForm';
-import PostList from './pages/PostList';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <nav className="navbar">
-          <ul className="nav-links">
-            <li>
-              <Link to="/test">Test</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/postform">newpost</Link>
-            </li>            
-          </ul>
-        </nav>
-      </div>
-      <Routes>
-        <Route path="/test" element={<Test/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/postform" element={<PostForm />} />
-        <Route path="/postlist" element={<PostList />} />
-      </Routes>
-    </Router>
-
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/create-post" element={<PostForm />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/post/:id" element={<PostDetail />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

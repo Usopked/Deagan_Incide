@@ -1,0 +1,37 @@
+/* Community.css */
+
+.post-item {
+  background-color: #333;
+  padding: 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.post-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+}
+
+button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
