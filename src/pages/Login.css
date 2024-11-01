@@ -1,4 +1,9 @@
 /* src/pages/Login.css */
+.back {
+  background-color: #FEF9F2;
+  padding-top: 25px;
+}
+
 .login-container {
   display: flex;
   flex-direction: column;

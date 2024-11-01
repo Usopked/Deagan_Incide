@@ -1,0 +1,14 @@
+/* src/components/PostItem.css */
+.post-item {
+  background-color: #FFE3E3;
+  padding: 10px;
+  margin: 15px 0px; /* 상하 간격 및 좌우 여백 설정 */
+  border-radius: 8px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.post-item:hover {
+  transform: translateY(-3px); /* 호버 시 약간의 움직임 */
+}

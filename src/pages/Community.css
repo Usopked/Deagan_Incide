@@ -1,11 +1,60 @@
 /* Community.css */
+.back{
+  background-color: #FEF9F2;
+  padding-top: 25px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #789DBC;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #FEF9F2;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  width: 230px !important;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #C9E9D2;
+  color: #333;
+}
+
+button {
+  background-color: #789DBC;
+  color: #FFF;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5a7c9b;
+}
 
 .post-item {
-  background-color: #333;
-  padding: 16px;
-  margin-bottom: 10px;
+  background-color: #FFE3E3;
+  padding-left: 30px;
+  margin-bottom: 20px !important;
   border-radius: 8px;
-  color: #fff;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .post-item a {
@@ -13,25 +62,7 @@
   color: inherit;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input, textarea {
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  background-color: #444;
-  color: #fff;
-}
-
-button {
-  background-color: #555;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
+/* 전체적으로 좌우 여백 조정 */
+input, textarea, .post-item {
+  margin: 0 10px;
 }

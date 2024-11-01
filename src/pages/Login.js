@@ -19,7 +19,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="back">
       <h2>로그인</h2>
       <form onSubmit={handleLogin}>
         <input type="email" placeholder="이메일" onChange={(e) => setEmail(e.target.value)} required />

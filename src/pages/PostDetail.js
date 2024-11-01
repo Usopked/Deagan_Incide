@@ -1,9 +1,9 @@
-// src/pages/PostDetail.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { db } from '../firebase';
 import { doc, updateDoc, increment, getDoc, collection, addDoc, query, where, getDocs, serverTimestamp } from 'firebase/firestore';
+import './PostDetail.css';
 
 function PostDetail() {
   const { id } = useParams();
@@ -12,11 +12,7 @@ function PostDetail() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
-  useEffect(() => {
-    fetchPost();
-  }, [id]);
-
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const postRef = doc(db, 'posts', id);
       const postSnap = await getDoc(postRef);
@@ -35,7 +31,11 @@ function PostDetail() {
     } catch (error) {
       console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchPost();
+  }, [fetchPost]); // 의존성 배열에 fetchPost 추가
 
   const handleAddComment = async () => {
     if (newComment.trim() === '') return;
@@ -73,16 +73,19 @@ function PostDetail() {
   }
 
   return (
-    <div>
+    <div className="back">
       <h2>{post.title}</h2>
       <p>{post.content}</p>
-      <p>댓글 수: {post.commentsCount}</p> {/* 댓글 수 추가 */}
+      <br />
 
-      <div>
+      <div className="comment">
         <h3>댓글</h3>
         {comments.length > 0 ? (
-          comments.map((comment) => (
-            <p key={comment.id}>{comment.text}</p>
+          comments.map((comment, index) => (
+            <div key={comment.id}>
+              <p>{comment.text}</p>
+              {index < comments.length - 1 && <div className="comment-divider"></div>} {/* 구분선 추가 */}
+            </div>
           ))
         ) : (
           <p>댓글이 없습니다.</p>
