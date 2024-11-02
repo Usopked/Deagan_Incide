@@ -6,7 +6,6 @@ import { collection, getDocs, orderBy, query, addDoc, serverTimestamp } from 'fi
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import PostItem from './PostItem';
 import './Community.css';
-
 function Community() {
   const { user } = useAuth();
   const [posts, setPosts] = useState([]);
@@ -34,7 +33,7 @@ function Community() {
 
     let imageUrl = '';
     if (image) {
-      const storageRef = ref(storage, `images/${image.name}_${Date.now()}`);
+      const storageRef = ref(storage, `images/${image.name}`);
       const snapshot = await uploadBytes(storageRef, image);
       imageUrl = await getDownloadURL(snapshot.ref);
     }

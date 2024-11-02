@@ -8,7 +8,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyArH0JG44qIQcdEvKTUxbadI95VNiqwG4M",
   authDomain: "deagon-507c3.firebaseapp.com",
   projectId: "deagon-507c3",
-  storageBucket: "deagon-507c3.appspot.com",
+  storageBucket: "deagon-507c3.firebasestorage.app",
   messagingSenderId: "696862991694",
   appId: "1:696862991694:web:3b69582b56a3139212ea1f",
   measurementId: "G-DEGX802PQ0"

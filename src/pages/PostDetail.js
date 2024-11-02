@@ -35,7 +35,7 @@ function PostDetail() {
 
   useEffect(() => {
     fetchPost();
-  }, [fetchPost]); // 의존성 배열에 fetchPost 추가
+  }, [fetchPost]);
 
   const handleAddComment = async () => {
     if (newComment.trim() === '') return;
@@ -75,6 +75,7 @@ function PostDetail() {
   return (
     <div className="back">
       <h2>{post.title}</h2>
+      {post.imageUrl && <img src={post.imageUrl} alt="Post" className="post-image"/>} {/* 이미지 표시 */}
       <p>{post.content}</p>
       <br />
 

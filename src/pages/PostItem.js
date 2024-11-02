@@ -10,6 +10,7 @@ function PostItem({ post }) {
         <p>{post.userNickname}</p>
         <p>{new Date(post.timestamp?.seconds * 1000).toLocaleDateString()}</p>
         <p>댓글 {post.commentsCount}개</p>
+        {post.imageUrl && <img src={post.imageUrl} alt="Post Thumbnail" className ="post-thumbnail" />} {/* 포스트 썸네일 이미지 표시 */}
       </Link>
     </div>
   );

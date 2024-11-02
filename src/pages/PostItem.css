@@ -1,4 +1,12 @@
 /* src/components/PostItem.css */
+
+.post-thumbnail {
+  max-width: 90%; 
+  height: auto; 
+  border-radius: 8px;
+  margin-top: 10px; 
+}
+
 .post-item {
   background-color: #FFE3E3;
   padding: 10px;
