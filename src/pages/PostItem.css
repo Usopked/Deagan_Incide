@@ -1,7 +1,7 @@
 /* src/components/PostItem.css */
 
 .post-thumbnail {
-  max-width: 90%; 
+  max-width: 80%; 
   height: auto; 
   border-radius: 8px;
   margin-top: 10px; 
@@ -10,7 +10,7 @@
 .post-item {
   background-color: #FFE3E3;
   padding: 10px;
-  margin: 15px 0px; /* 상하 간격 및 좌우 여백 설정 */
+  
   border-radius: 8px;
   color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
